@@ -1,0 +1,25 @@
+***Query to sort in the other direction, returning the top 10 counties with the highest yearly birth counts between 2016-2018***
+
+SELECT 
+  *
+FROM 
+  `bigquery-public-data.sdoh_cdc_wonder_natality.county_natality` 
+ORDER BY
+  Births
+DESC
+LIMIT 
+  10
+  
+***Modified the query so that it returns the top 10 counties with the highest birth counts for 2018 only***
+
+SELECT 
+  *
+FROM 
+  `bigquery-public-data.sdoh_cdc_wonder_natality.county_natality` 
+WHERE 
+  Year = '2018-01-01'
+ORDER BY
+  Births
+DESC
+LIMIT 
+  10
